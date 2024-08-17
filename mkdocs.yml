@@ -1,30 +1,62 @@
-site_name: MKDocs testing
+site_name: BadgePirates Documents
+site_url: https://docs.badgepirates.com
+repo_url: https://github.com/BPDocs/Docs/
+edit_uri: https://github.com/BPDocs/Docs/edit/main/docs
+
+
+
 theme:
   name: material
+  logo: img/badgepirates.png
+  favicon: img/favicon.ico
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - toc.integrate
     - navigation.top
+    - navigation.tracking
+    - toc.integrate
     - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
   language: en
+  
   palette:
-    - scheme: default
+    - media: "(prefers-color-scheme: dark)"
+      scheme: default
       toggle:
-        icon: material/toggle-switch-off-outline 
+        icon: material/brightness-4
         name: Switch to dark mode
-      primary: teal
+      primary: blue grey
       accent: purple 
-    - scheme: slate 
+    
+    - media: "(prefers-color-scheme: light)"
+      scheme: slate 
       toggle:
-        icon: material/toggle-switch
+        icon: material/brightness-7
         name: Switch to light mode    
-      primary: teal
+      primary: blue grey
       accent: lime
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra:
   social:
@@ -34,23 +66,15 @@ extra:
       link: https://twitter.com/BadgePirates
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/kevin-bennett-leessummit/
-
-markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - admonition
-  - pymdownx.arithmatex:
-      generic: true
-  - footnotes
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.mark
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-
-copyright: |
-  &copy; 2024 <a href="https://github.com/BadgePiratesLLC"  target="_blank" rel="noopener">BadgePiratesLLC</a>3.7
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/badgepiratesllc
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/BfsYbHY8m7
+nav:
+  - Home: index.md
+  - Build Guides:
+      - badge1: bg/badge1.md
+      - badge2: bg/badge2.md
+  - Misc:
+      - MiscDoc1: misc/misc1.md
+  - FAQ: faq/index.md
